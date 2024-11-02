@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-docker-intro
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubernetes-docker-intro
+  template:
+    metadata:
+      labels:
+        app: kubernetes-docker-intro
+    spec:
+      containers:
+      - name: kubernetes-docker-intro
+        image: kubernetes-docker-intro:latest
+        ports:
+        - containerPort: 3000
